@@ -2,4 +2,20 @@
 	background-color: #111111;
 	margin:20px 30px;
 	padding:20px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.AC-left{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	min-width: 500px;
+	min-height: 100px;
+}
+
+.AC-right i{
+	color:#A459D1;
+	font-size: 30px;
 }

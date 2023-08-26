@@ -1,0 +1,30 @@
+.Hero{
+	padding: 30px;
+	display: flex;
+}
+
+.Hero img{
+	width: 50%;
+	display: flex;
+	margin: 20px auto;
+}
+
+.Hero-text{
+	margin: 20px auto;
+	padding: 10px;
+}
+
+.Hero-text p{
+	font-size: 13px;
+	padding: 13px 0;
+}
+
+.Hero-text h4{
+	font-size: 18px;
+	padding: 13px 0;
+}
+
+.Hero-text p span{
+	font-weight: 600;
+	font-style: italic;
+}

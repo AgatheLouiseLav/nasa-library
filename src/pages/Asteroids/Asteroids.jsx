@@ -11,6 +11,7 @@ export default function Asteroids({ asteroids }) {
 
 	return (
 		<main>
+			<h1>Asteroids</h1>
 			{allAsteroids}
 		</main>
 	)

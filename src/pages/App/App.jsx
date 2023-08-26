@@ -10,6 +10,7 @@ import News from '../News/News';
 import Library from '../Library/Library';
 import Notifications from '../../components/Notifications/Notifications';
 import * as asteroidsAPI from '../../utilities/asteroids-api';
+import Hero from '../../components/Hero/Hero';
 
 export default function App() {
   const [user, setUser] = useState(getUser());
@@ -29,6 +30,7 @@ export default function App() {
       <>
       <div className='App-left'>
         <NavBar user={user} setUser={setUser}/>
+        <Hero />
         <Routes>
           <Route path="/asteroids" element={<Asteroids asteroids={asteroids}/>}/>
           <Route path="/mars" element={<Mars />} />

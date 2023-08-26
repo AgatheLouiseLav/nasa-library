@@ -1,9 +1,47 @@
 .welcome-navbar{
 	display: flex;
 	justify-content: space-between;
-	border: 1px solid red;
+	padding: 20px;
+}
+.welcome-navbar h1 span{
+	font-size: 25px;
+	  text-shadow:
+      0 0 7px #fff,
+      0 0 10px #A459D1,
+      0 0 21px #A459D1,
+      0 0 42px #A459D1,
+      0 0 82px #A459D1,
+      0 0 92px #A459D1,
+      0 0 102px #A459D1,
+      0 0 151px #A459D1;
+}
+
+.welcome-navbar i{
+	color: #A459D1;
+	font-size: 25px;
 }
 
 .sub-navbar{
-	border: 1px solid green;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.sub-navbar a{
+	text-decoration: none;
+	text-align: center;
+	color: #A459D1;
+	font-size: 18px;
+	padding: 10px;
+	margin: 10px;
+	width:25%;
+}
+.sub-navbar a:hover{
+	text-decoration: none;
+	color: #ffffff;
+	background-color: #A459D1;
+	font-size: 18px;
+}
+.sub-navbar a i{
+	margin-right: 10px;
 }
