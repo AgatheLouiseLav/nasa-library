@@ -1,24 +1,42 @@
 import './App.css';
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { getUser } from '../../utilities/users-service';
 import AuthPage from '../AuthPage/AuthPage';
-import NewOrderPage from '../NewOrderPage/NewOrderPage';
-import OrderHistoryPage from '../OrderHistoryPage/OrderHistoryPage';
 import { Routes, Route } from "react-router-dom";
 import NavBar from '../../components/NavBar/NavBar';
+import Asteroids from '../Asteroids/Asteroids';
+import Mars from '../Mars/Mars';
+import News from '../News/News';
+import Library from '../Library/Library';
+import Notifications from '../../components/Notifications/Notifications';
+import * as asteroidsAPI from '../../utilities/asteroids-api';
 
 export default function App() {
   const [user, setUser] = useState(getUser());
+  const [asteroids, setAsteroids] = useState([]);
+
+	useEffect(function(){
+		async function getAsteroids(){
+			const allAsteroids = await asteroidsAPI.getAllAsteroids();
+      setAsteroids(allAsteroids);
+		}
+		getAsteroids();
+	},[])
 
   return (
-   <main>
+   <main className='App'>
       { user ? 
       <>
-      <NavBar user={user} setUser={setUser}/>
-      <Routes>
-        <Route path="/orders" element={<OrderHistoryPage />}/>
-        <Route path="/orders/new" element={<NewOrderPage />} />
-      </Routes> 
+      <div className='App-left'>
+        <NavBar user={user} setUser={setUser}/>
+        <Routes>
+          <Route path="/asteroids" element={<Asteroids asteroids={asteroids}/>}/>
+          <Route path="/mars" element={<Mars />} />
+          <Route path="/news" element={<News />}/>
+          <Route path="/library" element={<Library />} />
+        </Routes> 
+      </div>
+      <Notifications />
       </>
         : 
         <AuthPage setUser={setUser}/> }

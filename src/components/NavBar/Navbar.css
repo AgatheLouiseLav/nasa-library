@@ -1,0 +1,9 @@
+.welcome-navbar{
+	display: flex;
+	justify-content: space-between;
+	border: 1px solid red;
+}
+
+.sub-navbar{
+	border: 1px solid green;
+}

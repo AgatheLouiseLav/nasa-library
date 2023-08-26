@@ -24,4 +24,5 @@ export default async function sendRequest(url, method = 'GET', payload = null) {
 	// if res.ok is false then something went wrong
 	if (res.ok) return res.json();
 	throw new Error('Bad Request');
+
 }
