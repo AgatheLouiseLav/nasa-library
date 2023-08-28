@@ -1,4 +1,5 @@
 import AsteroidCard from "../../components/AsteroidCard/AsteroidCard";
+import './Asteroids.css'
 
 export default function Asteroids({ asteroids }) {
 
@@ -10,7 +11,7 @@ export default function Asteroids({ asteroids }) {
 	))
 
 	return (
-		<main>
+		<main className="Asteroids">
 			<h1>Asteroids</h1>
 			{allAsteroids}
 		</main>

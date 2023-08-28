@@ -18,6 +18,7 @@ app.use(express.json());
 // to serve from the production 'build' folder
 app.use(favicon(path.join(__dirname, 'build', 'favicon.ico')));
 app.use(express.static(path.join(__dirname, 'build')));
+app.use('/api/comments',require('./routes/api/comments'));
 
 // Middleware to check and verify a JWT and
 // assign the user object from JWT to req.user

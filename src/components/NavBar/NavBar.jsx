@@ -1,7 +1,6 @@
 import './Navbar.css';
 import { Link } from "react-router-dom";
 import * as userService from '../../utilities/users-service';
-import Hero from '../Hero/Hero';
 
 export default function NavBar({ user, setUser }) {
 	function handleLogOut() {
@@ -20,6 +19,7 @@ export default function NavBar({ user, setUser }) {
 			<Link to="/mars"><i class="uil uil-mars"></i>Mars</Link>
 			<Link to="/news"><i class="uil uil-newspaper"></i>News</Link>
 			<Link to="/library"><i class="uil uil-search"></i>Library</Link>
+			<Link to="/comments">Comments</Link>
 		</div>
 	</nav>
 	);	

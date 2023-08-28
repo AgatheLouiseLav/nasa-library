@@ -10,11 +10,29 @@ import News from '../News/News';
 import Library from '../Library/Library';
 import Notifications from '../../components/Notifications/Notifications';
 import * as asteroidsAPI from '../../utilities/asteroids-api';
+import * as commentAPI from '../../utilities/comment-api';
 import Hero from '../../components/Hero/Hero';
+import Comments from '../../components/Comments/Comments';
 
 export default function App() {
   const [user, setUser] = useState(getUser());
   const [asteroids, setAsteroids] = useState([]);
+  const [comments, setComments] = useState([]);
+
+  /*Create comment */
+  async function getComments() {
+      const comments = await commentAPI.getAll(getUser()._id);
+      setComments(comments);
+  	}
+
+	  useEffect(function() {
+  	  getComments();
+	  },[]);
+
+	function addComment(comment) {
+    	setComments([...comments, comment]);
+  	}
+  /*End Create comment */
 
 	useEffect(function(){
 		async function getAsteroids(){
@@ -36,6 +54,7 @@ export default function App() {
           <Route path="/mars" element={<Mars />} />
           <Route path="/news" element={<News />}/>
           <Route path="/library" element={<Library />} />
+          <Route path="/comments" element={<Comments addComment={addComment} getComments={getComments} comments={comments} />} />
         </Routes> 
       </div>
       <Notifications />

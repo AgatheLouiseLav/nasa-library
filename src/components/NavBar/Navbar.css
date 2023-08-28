@@ -1,19 +1,20 @@
+.Navbar{
+	overflow: hidden;
+    position: fixed;
+    top: 0;
+	width: 70%;
+	background-color: #000000;
+}
+
 .welcome-navbar{
 	display: flex;
 	justify-content: space-between;
 	padding: 20px;
+	align-items: center;
 }
+
 .welcome-navbar h1 span{
 	font-size: 25px;
-	  text-shadow:
-      0 0 7px #fff,
-      0 0 10px #A459D1,
-      0 0 21px #A459D1,
-      0 0 42px #A459D1,
-      0 0 82px #A459D1,
-      0 0 92px #A459D1,
-      0 0 102px #A459D1,
-      0 0 151px #A459D1;
 }
 
 .welcome-navbar i{
@@ -42,6 +43,7 @@
 	background-color: #A459D1;
 	font-size: 18px;
 }
+
 .sub-navbar a i{
 	margin-right: 10px;
 }
