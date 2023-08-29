@@ -1,22 +1,22 @@
-import sendRequestNasa from "./send-request";
+import sendRequest from "./send-request";
 const BASE_URL = '/api/comments';
 
 export function getAll(userId) {
-  return sendRequestNasa(`${BASE_URL}/${userId}`);
+  return sendRequest(`${BASE_URL}/${userId}`);
 }
 
 export function createComment(commentData) {
-  return sendRequestNasa(`${BASE_URL}`, 'POST', commentData );
+  return sendRequest(`${BASE_URL}`, 'POST', commentData);
 }
 
-export function updateComment() {
-	return sendRequestNasa();
+export function editComment(editData) {
+	return sendRequest(`${BASE_URL}/`, editData);
 }
 
-export function editComment() {
-	return sendRequestNasa();
-}
+//export function updateComment(updateData) {
+//	return sendRequest(`${BASE_URL}/:id`, 'PUT', updateData);
+//}
 
-export function deleteComment() {
-	return sendRequestNasa();
-}
+//export function deleteComment(deleteData) {
+//	return sendRequest(`${BASE_URL}/:id`, 'DELETE', deleteData);
+//}

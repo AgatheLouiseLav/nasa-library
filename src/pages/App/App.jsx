@@ -11,12 +11,14 @@ import Library from '../Library/Library';
 import Notifications from '../../components/Notifications/Notifications';
 import * as asteroidsAPI from '../../utilities/asteroids-api';
 import * as commentAPI from '../../utilities/comment-api';
+import * as marsAPI from '../../utilities/mars-img-api';
 import Hero from '../../components/Hero/Hero';
 import Comments from '../../components/Comments/Comments';
 
 export default function App() {
   const [user, setUser] = useState(getUser());
   const [asteroids, setAsteroids] = useState([]);
+  const [marsImages, setMarsImages] = useState([]);
   const [comments, setComments] = useState([]);
 
   /*Create comment */
@@ -42,6 +44,16 @@ export default function App() {
 		getAsteroids();
 	},[])
 
+  useEffect(function(){
+		async function getMarsImages(){
+			const allMarsImages = await marsAPI.getMarsImages();
+      setMarsImages(allMarsImages);
+		}
+		getMarsImages();
+	},[])
+
+  console.log(marsImages)
+
   return (
    <main className='App'>
       { user ? 
@@ -51,10 +63,10 @@ export default function App() {
         <Hero />
         <Routes>
           <Route path="/asteroids" element={<Asteroids asteroids={asteroids}/>}/>
-          <Route path="/mars" element={<Mars />} />
+          <Route path="/mars" element={<Mars marsImages={marsImages} />} />
           <Route path="/news" element={<News />}/>
           <Route path="/library" element={<Library />} />
-          <Route path="/comments" element={<Comments addComment={addComment} getComments={getComments} comments={comments} />} />
+          <Route path="/comments" element={<Comments addComment={addComment} getComments={getComments} comments={comments} />} />        
         </Routes> 
       </div>
       <Notifications />

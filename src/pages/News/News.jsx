@@ -1,7 +1,15 @@
+import Article from "../../components/Article/Article";
+
 export default function News() {
 	return (
 		<div>
-			<h1>News</h1>
+			<Article title="TEST 1" text="blablabla"/>
+			<Article title="TEST 1" text="blablabla"/>
+			<Article title="TEST 1" text="blablabla"/>
+			<Article title="TEST 1" text="blablabla"/>
+			<Article title="TEST 1" text="blablabla"/>
+			<Article title="TEST 1" text="blablabla"/>
+			<Article title="TEST 1" text="blablabla"/>
 		</div>
 	)
 }

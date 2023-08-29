@@ -1,27 +1,36 @@
 import { useState} from 'react';
 import './Comments.css';
-import { getUser } from '../../utilities/users-service';
 import * as commentAPI from '../../utilities/comment-api';
 import SingleComment from '../SingleComment/SingleComment';
 
 export default function Comments({addComment, getComments, comments }) {
-	const [newComment, setNewComment] = useState("");
 
-	/*Edit Comment */
+	const [newComment, setNewComment] = useState("");
+	
+	/*Add Comment */
 	async function handleAddComment(evt) {
     	evt.preventDefault();
-		const comment = await commentAPI.createComment({text: newComment, user: getUser()._id});
+		const comment = await commentAPI.createComment({text: newComment});
 		addComment(comment);
     	setNewComment("");
 		getComments();
   	}
+	/*End Add comment */
+
+	/* Edit comment */
+		const handleCommentUpdate = (updatedComment) => {
+    	const commentIndex = comments.findIndex(comment => comment._id === updatedComment._id);
+		if (commentIndex !== -1) {
+		const updatedComments = [...comments];
+		updatedComments[commentIndex] = updatedComment;
+		setNewComment(updatedComments);
+		}};
 	/*End Edit comment */
-	console.log(comments, "***");
 
 	const commentItems = comments.map((c) =>(
-		<SingleComment comment={c} key={c._id} />
+		<SingleComment comment={c} key={c._id} onUpdate={handleCommentUpdate} />
 	));
-	
+
 	return(
 		<div className="Asteroids-comments">
 		<form onSubmit={handleAddComment}>

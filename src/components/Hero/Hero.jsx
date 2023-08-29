@@ -11,7 +11,6 @@ export default function Hero() {
 		}
 		getApod();
 	},[])
-	console.log(apod.url)
 
 	return (
 		<div className="Hero">

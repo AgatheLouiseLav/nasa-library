@@ -1,24 +1,44 @@
-//import * as commentAPI from '../../utilities/comment-api';
-import { Link } from 'react-router-dom';
-//import { getUser } from '../../utilities/users-service';
+import * as commentAPI from '../../utilities/comment-api';
+import {useState} from "react";
+import {getUser} from '../../utilities/users-service'
 
-export default function SingleComment({comment}) {
 
-	//async function handleCommentUpdate(evt) {
-    //	evt.preventDefault();
-	//	const comment = await commentAPI.updateComment({text: newComment, user: getUser()._id});
-	//	addComment(newComment);
-    //	setNewComment("");
-	//	getComments();
-  	//}
+export default function SingleComment({comment }) {
+	const [editing, setEditing] = useState(false);
+  	const [editedComment, setEditedComment] = useState(comment.text);
 
-	console.log(comment, "&&&")
+	const handleEditClick = () => {
+    setEditing(true);
+  	};
+
+  	async function handleEditSubmit(evt) {
+    	evt.preventDefault();
+   		const editData = await commentAPI.editComment();
+		setEditedComment(editData);
+  	};
+
+  console.log(editedComment, comment._id, "&&&")
 
 	return (
 		<div className="SingleComment">
-			<h3>{comment.text}</h3>
-			<Link to="/comments/edit" ><i class="uil uil-edit-alt"></i></Link>
-			<button><i class="uil uil-trash-alt"></i></button>
+			 {editing ? (
+				<form onSubmit={handleEditSubmit}>
+				<textarea
+					value={editedComment}
+					onChange={(e) => setEditedComment(e.target.value)}
+					required
+					pattern=".{4,}"
+				/>
+				<button type="submit">Save</button>
+				</form>
+      		) : (
+				<>
+					<h3>{comment.text}</h3>
+					<button onClick={handleEditClick}><i class="uil uil-edit-alt"></i></button>
+					<button><i class="uil uil-trash-alt"></i></button>
+				</>
+			)}
+			
 		</div>
 	)
 }
