@@ -17,7 +17,7 @@ export default function Comments({addComment, getComments, comments }) {
   	}
 	/*End Add comment */
 
-	/* Edit comment */
+	/* Updatecomment */
 		const handleCommentUpdate = (updatedComment) => {
     	const commentIndex = comments.findIndex(comment => comment._id === updatedComment._id);
 		if (commentIndex !== -1) {
@@ -25,7 +25,7 @@ export default function Comments({addComment, getComments, comments }) {
 		updatedComments[commentIndex] = updatedComment;
 		setNewComment(updatedComments);
 		}};
-	/*End Edit comment */
+	/*End Update comment */
 
 	const commentItems = comments.map((c) =>(
 		<SingleComment comment={c} key={c._id} onUpdate={handleCommentUpdate} />

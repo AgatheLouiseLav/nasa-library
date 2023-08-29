@@ -1,31 +1,30 @@
 import * as commentAPI from '../../utilities/comment-api';
 import {useState} from "react";
-import {getUser} from '../../utilities/users-service'
 
+export default function SingleComment({comment, onUpdate}) {
+	const [update, setUpdate] = useState(false);
+  	const [updateComment, setUpdateComment] = useState(comment.text);
 
-export default function SingleComment({comment }) {
-	const [editing, setEditing] = useState(false);
-  	const [editedComment, setEditedComment] = useState(comment.text);
-
-	const handleEditClick = () => {
-    setEditing(true);
+	const handleUpdateClick = () => {
+    setUpdate(true);
   	};
 
-  	async function handleEditSubmit(evt) {
+  	async function handleUpdateSubmit(evt) {
     	evt.preventDefault();
-   		const editData = await commentAPI.editComment();
-		setEditedComment(editData);
+   		const updateData = await commentAPI.updateComment();
+		setUpdateComment(updateData);
+		onUpdate(updateComment);
   	};
 
-  console.log(editedComment, comment._id, "&&&")
+  console.log(updateComment, comment._id, "&&&")
 
 	return (
 		<div className="SingleComment">
-			 {editing ? (
-				<form onSubmit={handleEditSubmit}>
+			 {update ? (
+				<form onSubmit={handleUpdateSubmit}>
 				<textarea
-					value={editedComment}
-					onChange={(e) => setEditedComment(e.target.value)}
+					value={updateComment}
+					onChange={(e) => setUpdateComment(e.target.value)}
 					required
 					pattern=".{4,}"
 				/>
@@ -34,7 +33,7 @@ export default function SingleComment({comment }) {
       		) : (
 				<>
 					<h3>{comment.text}</h3>
-					<button onClick={handleEditClick}><i class="uil uil-edit-alt"></i></button>
+					<button onClick={handleUpdateClick}><i class="uil uil-edit-alt"></i></button>
 					<button><i class="uil uil-trash-alt"></i></button>
 				</>
 			)}

@@ -5,12 +5,10 @@ const commentsCtrl = require('../../controllers/api/comments');
 
 router.post('/', commentsCtrl.create);
 
-router.get('/user/:userId', commentsCtrl.index);
+router.get('/', commentsCtrl.index);
 
-//router.get('/:id', commentsCtrl.edit);
+router.put('/:id', commentsCtrl.update);
 
-//router.put('/:id', commentsCtrl.update);
-
-//router.delete('/:id', commentsCtrl.delete);
+//router.delete('/:id', commentsCtrl.deleteComment);
 
 module.exports = router;

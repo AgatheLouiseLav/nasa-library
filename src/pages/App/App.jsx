@@ -23,17 +23,18 @@ export default function App() {
 
   /*Create comment */
   async function getComments() {
-      const comments = await commentAPI.getAll(getUser()._id);
+      const comments = await commentAPI.getAll();
       setComments(comments);
   	}
 
 	  useEffect(function() {
   	  getComments();
-	  },[]);
+	  },[user]);
 
 	function addComment(comment) {
     	setComments([...comments, comment]);
   	}
+    console.log(comments)
   /*End Create comment */
 
 	useEffect(function(){
