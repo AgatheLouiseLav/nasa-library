@@ -9,10 +9,10 @@ export function createComment(commentData) {
   return sendRequest(`${BASE_URL}`, 'POST', commentData);
 }
 
-export function updateComment(updateData, commentId) {
+export function updateComment(commentId, updateData) {
 	return sendRequest(`${BASE_URL}/${commentId}`, 'PUT', updateData);
 }
 
-//export function deleteComment(deleteData, commentId) {
-//	return sendRequest(`${BASE_URL}/${commentId}`, 'DELETE', deleteData);
-//}
+export function deleteComment(commentId, deleteData) {
+	return sendRequest(`${BASE_URL}/${commentId}`, 'DELETE', deleteData);
+}

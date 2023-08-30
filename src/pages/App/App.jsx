@@ -34,9 +34,9 @@ export default function App() {
 	function addComment(comment) {
     	setComments([...comments, comment]);
   	}
-    console.log(comments)
   /*End Create comment */
 
+  /* Get Asteroids */
 	useEffect(function(){
 		async function getAsteroids(){
 			const allAsteroids = await asteroidsAPI.getAllAsteroids();
@@ -44,7 +44,9 @@ export default function App() {
 		}
 		getAsteroids();
 	},[])
+  /* End Get Asteroids */
 
+  /* Get Mars Img */
   useEffect(function(){
 		async function getMarsImages(){
 			const allMarsImages = await marsAPI.getMarsImages();
@@ -53,7 +55,7 @@ export default function App() {
 		getMarsImages();
 	},[])
 
-  console.log(marsImages)
+  /* End Get Mars Img */
 
   return (
    <main className='App'>
@@ -67,7 +69,7 @@ export default function App() {
           <Route path="/mars" element={<Mars marsImages={marsImages} />} />
           <Route path="/news" element={<News />}/>
           <Route path="/library" element={<Library />} />
-          <Route path="/comments" element={<Comments addComment={addComment} getComments={getComments} comments={comments} />} />        
+          <Route path="/comments" element={<Comments addComment={addComment} getComments={getComments} comments={comments} setComments={setComments} />} />        
         </Routes> 
       </div>
       <Notifications />

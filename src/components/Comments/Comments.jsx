@@ -3,10 +3,9 @@ import './Comments.css';
 import * as commentAPI from '../../utilities/comment-api';
 import SingleComment from '../SingleComment/SingleComment';
 
-export default function Comments({addComment, getComments, comments }) {
+export default function Comments({addComment, getComments, comments, setComments }) {
 
 	const [newComment, setNewComment] = useState("");
-	const [commentsChange, setCommentsChange] = useState([]);
 	
 	/*Add Comment */
 	async function handleAddComment(evt) {
@@ -18,20 +17,33 @@ export default function Comments({addComment, getComments, comments }) {
   	}
 	/*End Add comment */
 
-	/* Updatecomment */
-		const handleCommentUpdate = (commentId, updatedComment) => {
+	/* Update comment */
+		const handleCommentUpdate = (updatedComment) => {
     	const updatedComments = comments.map(comment =>
-      	comment._id === commentId ? { ...comment, text: updatedComment } : comment
-    	);
-		console.log(updatedComments, "It's here")
-    	setCommentsChange(updatedComments); 
+      		updatedComment._id === comment._id ? updatedComment : comment);
+    	setComments(updatedComments); 
   		};
 		
 	/*End Update comment */
 
+	/*Delete Comment */
+		const handleCommentDelete = (deletedComment) => {
+		const deleteComments = comments.filter(comment => 
+			comment._id !== deletedComment);
+		setComments(deleteComments);
+		};
+	/*End Delete Comment */
+
+	/* SingleComment Component */
 	const commentItems = comments.map((c) =>(
-		<SingleComment comment={c} key={c._id} onUpdate={handleCommentUpdate} />
+		<SingleComment 
+			comment={c} 
+			key={c._id} 
+			handleCommentUpdate={handleCommentUpdate} 
+			handleCommentDelete={handleCommentDelete} 
+		/>
 	));
+	/* End SingleComment Component */
 
 	return(
 		<div className="Asteroids-comments">

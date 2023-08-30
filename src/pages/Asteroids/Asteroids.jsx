@@ -3,7 +3,6 @@ import './Asteroids.css'
 
 export default function Asteroids({ asteroids }) {
 
-	console.log(asteroids)
 	const newAsteroids = asteroids.near_earth_objects;
 
 	const allAsteroids = newAsteroids.map((asteroid, idx) => (

@@ -1,34 +1,46 @@
 import * as commentAPI from '../../utilities/comment-api';
 import {useState} from "react";
 
-export default function SingleComment({comment, onUpdate}) {
+export default function SingleComment({comment, handleCommentUpdate, handleCommentDelete}) {
 	const [update, setUpdate] = useState(false);
-  	const [updateComment, setUpdateComment] = useState(comment.text);
+  	const [updateComment, setUpdateComment] = useState({ text : comment.text});
 
 	const handleUpdateClick = () => {
     setUpdate(true);
   	};
 
+	/* Function Update */
   	async function handleUpdateSubmit(evt) {
     	evt.preventDefault();
    		 try {
       		const updateData = await commentAPI.updateComment(comment._id, updateComment);
-      		onUpdate(updateData);
+      		handleCommentUpdate(updateData);
       		setUpdate(false); 
     	} catch (error) {
       		console.error("Error updating comment:", error);
     	} 
   	};
+	/* End Function Update */
 
-  console.log(updateComment, comment._id, "&&&")
+	/* Function Delete */
+	 async function handleDeleteClick(evt) {
+		evt.preventDefault();
+		try {
+			await commentAPI.deleteComment(comment._id);
+			handleCommentDelete(comment._id);
+		} catch (error) {
+			console.error("Error delete comment:", error);
+		}
+  	};
+	/* End Function Delete */
 
 	return (
 		<div className="SingleComment">
 			  {update ? (
         <form onSubmit={handleUpdateSubmit}>
           <textarea
-            value={updateComment}
-            onChange={(e) => setUpdateComment(e.target.value)}
+            value={updateComment.text}
+            onChange={(e) => setUpdateComment({text: e.target.value})}
             required
             pattern=".{4,}"
           />
@@ -38,7 +50,7 @@ export default function SingleComment({comment, onUpdate}) {
         <>
           <h3>{comment.text}</h3>
           <button onClick={handleUpdateClick}><i className="uil uil-edit-alt"></i></button>
-          <button><i className="uil uil-trash-alt"></i></button>
+          <button onClick={handleDeleteClick}><i className="uil uil-trash-alt"></i></button>
         </>
       )}	
 		</div>
