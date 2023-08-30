@@ -15,11 +15,11 @@ export default function NavBar({ user, setUser }) {
 			<Link to="" onClick={handleLogOut}><i class="uil uil-signout"></i></Link>
 		</div>
 		<div className='sub-navbar'>
+			<Link to="/"><i class="uil uil-estate"></i>Home</Link>
 			<Link to="/asteroids"><i class="uil uil-asterisk"></i>Asteroids</Link>
 			<Link to="/mars"><i class="uil uil-mars"></i>Mars</Link>
-			<Link to="/news"><i class="uil uil-newspaper"></i>News</Link>
-			<Link to="/library"><i class="uil uil-search"></i>Library</Link>
-			<Link to="/comments">Comments</Link>
+			<Link to="/forecast"><i class="uil uil-cloud-rain-sun"></i>Forecast</Link>
+			<Link to="/comments"><i class="uil uil-search"></i>Observation</Link>
 		</div>
 	</nav>
 	);	

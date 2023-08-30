@@ -6,19 +6,18 @@ import { Routes, Route } from "react-router-dom";
 import NavBar from '../../components/NavBar/NavBar';
 import Asteroids from '../Asteroids/Asteroids';
 import Mars from '../Mars/Mars';
-import News from '../News/News';
-import Library from '../Library/Library';
-import Notifications from '../../components/Notifications/Notifications';
+import Forecast from '../Forecast/Forecast';
 import * as asteroidsAPI from '../../utilities/asteroids-api';
 import * as commentAPI from '../../utilities/comment-api';
 import * as marsAPI from '../../utilities/mars-img-api';
+//import * as marsWeatherAPI from '../../utilities/mars-weather-api';
 import Hero from '../../components/Hero/Hero';
 import Comments from '../../components/Comments/Comments';
 
 export default function App() {
   const [user, setUser] = useState(getUser());
-  const [asteroids, setAsteroids] = useState([]);
-  const [marsImages, setMarsImages] = useState([]);
+  const [asteroids, setAsteroids] = useState(null);
+  const [marsImages, setMarsImages] = useState(null);
   const [comments, setComments] = useState([]);
 
   /*Create comment */
@@ -57,23 +56,30 @@ export default function App() {
 
   /* End Get Mars Img */
 
+  /* Get Mars Weather */
+  //useEffect(function(){
+	//	async function getMarsWeather(){
+	//		const marsForecast = await marsWeatherAPI.getMarsWeather();
+  //    setMarsWeather(marsForecast);
+	//	}
+	//	getMarsWeather();
+	//},[])
+  
+  /* End Get Mars Weather */
+
   return (
    <main className='App'>
       { user ? 
-      <>
       <div className='App-left'>
         <NavBar user={user} setUser={setUser}/>
-        <Hero />
         <Routes>
+          <Route path="/" element={<Hero />}/>
           <Route path="/asteroids" element={<Asteroids asteroids={asteroids}/>}/>
           <Route path="/mars" element={<Mars marsImages={marsImages} />} />
-          <Route path="/news" element={<News />}/>
-          <Route path="/library" element={<Library />} />
+          <Route path="/forecast" element={<Forecast />}/>
           <Route path="/comments" element={<Comments addComment={addComment} getComments={getComments} comments={comments} setComments={setComments} />} />        
         </Routes> 
       </div>
-      <Notifications />
-      </>
         : 
         <AuthPage setUser={setUser}/> }
    </main>
