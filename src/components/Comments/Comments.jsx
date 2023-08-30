@@ -6,6 +6,7 @@ import SingleComment from '../SingleComment/SingleComment';
 export default function Comments({addComment, getComments, comments }) {
 
 	const [newComment, setNewComment] = useState("");
+	const [commentsChange, setCommentsChange] = useState([]);
 	
 	/*Add Comment */
 	async function handleAddComment(evt) {
@@ -18,13 +19,14 @@ export default function Comments({addComment, getComments, comments }) {
 	/*End Add comment */
 
 	/* Updatecomment */
-		const handleCommentUpdate = (updatedComment) => {
-    	const commentIndex = comments.findIndex(comment => comment._id === updatedComment._id);
-		if (commentIndex !== -1) {
-		const updatedComments = [...comments];
-		updatedComments[commentIndex] = updatedComment;
-		setNewComment(updatedComments);
-		}};
+		const handleCommentUpdate = (commentId, updatedComment) => {
+    	const updatedComments = comments.map(comment =>
+      	comment._id === commentId ? { ...comment, text: updatedComment } : comment
+    	);
+		console.log(updatedComments, "It's here")
+    	setCommentsChange(updatedComments); 
+  		};
+		
 	/*End Update comment */
 
 	const commentItems = comments.map((c) =>(
