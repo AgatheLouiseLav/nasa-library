@@ -1,7 +1,6 @@
 .Hero{
-	padding: 130px 30px 70px;
+	padding: 160px 30px 70px;
 	display: flex;
-	border: 2px solid blueviolet;
 	height: 100%;
 }
 

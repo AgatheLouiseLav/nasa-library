@@ -1,5 +1,10 @@
 .Supernovas{
-	padding: 150px 60px;
+	padding: 150px 20px;
+}
+
+.Supernovas-flex{
+	display: flex;
+	flex-wrap: wrap;
 }
 
 .Supernovas h1{

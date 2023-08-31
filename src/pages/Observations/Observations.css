@@ -3,7 +3,7 @@
 }
 
 .Observations form{
-	border:purple 2px solid;
+	border:red 2px solid;
 	display: flex;
 	flex-direction: column;
 }

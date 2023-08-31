@@ -4,7 +4,7 @@
 	background-color: #000000;
 	height: 130px;
 	width: 90%;
-	padding: 10px 60px;
+	padding: 30px 60px 0 60px;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;

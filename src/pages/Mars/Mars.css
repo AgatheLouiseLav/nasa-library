@@ -2,6 +2,11 @@
 	padding: 150px 20px;
 }
 
+.Mars-Container{
+	display: flex;
+	flex-wrap: wrap;
+}
+
 .Mars h1{
 	text-align: center;
 }

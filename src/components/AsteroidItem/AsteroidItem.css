@@ -1,7 +1,41 @@
 .AsteroidItem{
 	padding: 150px 20px;
+	align-items: center;
 }
 
-.AsteroidItem h1{
+.AsteroidItem h1, .AsteroidItem h3{
 	text-align: center;
+	padding:20px;
+}
+
+.AsteroidItem-table{
+	margin:0 auto;
+}
+
+.AsteroidItem-table th {
+	width: 400px;
+  	padding: 12px;
+  	text-align: left;
+  	background-color: #A459D1;
+  	color: white;
+}
+
+.AsteroidItem-table td, .AsteroidItem-table th {
+  padding: 8px;
+}
+
+.AsteroidItem-table tr:nth-child(even){background-color: #111111;}
+.AsteroidItem-date p:nth-child(even){background-color: #111111;}
+
+.AsteroidItem-date {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+.AsteroidItem-date p{
+	padding:5px;
+	text-align: center;
+	font-size: 18px;
+	width:250px;
+
 }

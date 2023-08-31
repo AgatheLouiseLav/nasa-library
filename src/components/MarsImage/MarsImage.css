@@ -1,0 +1,14 @@
+.MarsImage{
+	display: flex;
+	width: 400px;
+	margin:0 auto;
+	align-items: center;
+	justify-content: center;
+}
+
+.MarsImage img{
+	padding: 10px;
+	align-items: center;
+	width: 400px;
+	margin:0 auto;
+}

@@ -8,9 +8,9 @@ export default function SupernovaCard({item}){
 		navigate('/supernova-item', {state : item})
 	}
 	return (
-		<div className="SupernovaCard">
-			<h3 onClick={handleNavigate}>{data[0].title}</h3>
-			<img src={links[0].href} alt="" />
+		<div className="SupernovaCard" onClick={handleNavigate}>
+			<img src={links[0].href} alt={data[0].title} />
+			<h3>{data[0].title}</h3>
 		</div>
 	)
 }

@@ -1,5 +1,6 @@
 import * as commentAPI from '../../utilities/comment-api';
 import {useState} from "react";
+import './SingleComment.css'
 
 export default function SingleComment({comment, handleCommentUpdate, handleCommentDelete}) {
 	const [update, setUpdate] = useState(false);
