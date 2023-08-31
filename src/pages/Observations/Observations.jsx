@@ -1,9 +1,9 @@
 import { useState} from 'react';
-import './Comments.css';
+import './Observations.css';
 import * as commentAPI from '../../utilities/comment-api';
-import SingleComment from '../SingleComment/SingleComment';
+import SingleComment from '../../components/SingleComment/SingleComment';
 
-export default function Comments({addComment, getComments, comments, setComments }) {
+export default function Observations({addComment, getComments, comments, setComments }) {
 
 	const [newComment, setNewComment] = useState("");
 	
@@ -46,9 +46,9 @@ export default function Comments({addComment, getComments, comments, setComments
 	/* End SingleComment Component */
 
 	return(
-		<div className="Asteroids-comments">
+		<div className="Observations">
 		<form onSubmit={handleAddComment}>
-			<h2>New Comment</h2><br/>
+			<h2>New Observation</h2><br/>
 			<input 
 				value={newComment}
 				onChange={(evt) => setNewComment(evt.target.value)}

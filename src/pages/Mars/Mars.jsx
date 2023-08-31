@@ -1,17 +1,14 @@
 import MarsImage from "../../components/MarsImage/MarsImage"
+import './Mars.css'
 
 export default function Mars({marsImages}) {
-
-	console.log(marsImages)
-  	//const marsDB = marsImages.photos;
-  	//console.log(marsDB);
-
 	
 	return (
-		<>
+		<div className="Mars">
+			<h1>Mars Images</h1>
 			{marsImages && marsImages.photos.map((marsImg) => (
 	 			<MarsImage marsImg={marsImg} key={marsImg.id} />
 			))}
-		</>
+		</div>
 	)
 }

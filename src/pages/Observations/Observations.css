@@ -1,4 +1,8 @@
-.Asteroids-comments form{
+.Observations {
+	padding: 150px 20px;
+}
+
+.Observations form{
 	border:purple 2px solid;
 	display: flex;
 	flex-direction: column;

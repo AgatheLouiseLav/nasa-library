@@ -1,7 +1,9 @@
 .App{
-	display: flex;
+	border: 2px solid greenyellow;
+	height: 100%;
 }
+
 .App-left{
-	width:100%;
+	height: 100%;
 	background-color: #000000;
 }

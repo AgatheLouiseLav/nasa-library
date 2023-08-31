@@ -6,18 +6,20 @@ import { Routes, Route } from "react-router-dom";
 import NavBar from '../../components/NavBar/NavBar';
 import Asteroids from '../Asteroids/Asteroids';
 import Mars from '../Mars/Mars';
-import Forecast from '../Forecast/Forecast';
+import Supernovas from '../Supernovas/Supernovas';
 import * as asteroidsAPI from '../../utilities/asteroids-api';
 import * as commentAPI from '../../utilities/comment-api';
 import * as marsAPI from '../../utilities/mars-img-api';
-//import * as marsWeatherAPI from '../../utilities/mars-weather-api';
+import * as supernovaAPI from '../../utilities/supernova-api';
 import Hero from '../../components/Hero/Hero';
-import Comments from '../../components/Comments/Comments';
+import Observations from '../Observations/Observations';
+import SupernovaItem from '../../components/SupernovaItem/SupernovaItem';
 
 export default function App() {
   const [user, setUser] = useState(getUser());
   const [asteroids, setAsteroids] = useState(null);
   const [marsImages, setMarsImages] = useState(null);
+  const [supernovasData, setSupernovasData] = useState(null);
   const [comments, setComments] = useState([]);
 
   /*Create comment */
@@ -57,14 +59,13 @@ export default function App() {
   /* End Get Mars Img */
 
   /* Get Mars Weather */
-  //useEffect(function(){
-	//	async function getMarsWeather(){
-	//		const marsForecast = await marsWeatherAPI.getMarsWeather();
-  //    setMarsWeather(marsForecast);
-	//	}
-	//	getMarsWeather();
-	//},[])
-  
+  useEffect(function(){
+		async function getSupernova(){
+			const supernovaImg = await supernovaAPI.getSupernova();
+      setSupernovasData(supernovaImg);
+		}
+		getSupernova();
+	},[]) 
   /* End Get Mars Weather */
 
   return (
@@ -76,8 +77,9 @@ export default function App() {
           <Route path="/" element={<Hero />}/>
           <Route path="/asteroids" element={<Asteroids asteroids={asteroids}/>}/>
           <Route path="/mars" element={<Mars marsImages={marsImages} />} />
-          <Route path="/forecast" element={<Forecast />}/>
-          <Route path="/comments" element={<Comments addComment={addComment} getComments={getComments} comments={comments} setComments={setComments} />} />        
+          <Route path="/supernovas" element={<Supernovas supernovasData={supernovasData}/>}/>
+          <Route path="/supernovaitem" element={<SupernovaItem/>} />
+          <Route path="/observations" element={<Observations addComment={addComment} getComments={getComments} comments={comments} setComments={setComments} />} />        
         </Routes> 
       </div>
         : 

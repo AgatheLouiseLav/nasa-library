@@ -2,6 +2,7 @@
     position: fixed;
 	background-color: #000000;
 	border: 2px solid red;
+	height: 130px;
 }
 
 .welcome-navbar{
