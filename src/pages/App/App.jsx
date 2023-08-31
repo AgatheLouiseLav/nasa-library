@@ -14,6 +14,7 @@ import * as supernovaAPI from '../../utilities/supernova-api';
 import Hero from '../../components/Hero/Hero';
 import Observations from '../Observations/Observations';
 import SupernovaItem from '../../components/SupernovaItem/SupernovaItem';
+import AsteroidItem from '../../components/AsteroidItem/AsteroidItem';
 
 export default function App() {
   const [user, setUser] = useState(getUser());
@@ -76,9 +77,10 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Hero />}/>
           <Route path="/asteroids" element={<Asteroids asteroids={asteroids}/>}/>
+          <Route path="/asteroid-item" element={<AsteroidItem />}/>
           <Route path="/mars" element={<Mars marsImages={marsImages} />} />
           <Route path="/supernovas" element={<Supernovas supernovasData={supernovasData}/>}/>
-          <Route path="/supernovaitem" element={<SupernovaItem/>} />
+          <Route path="/supernova-item" element={<SupernovaItem />} />
           <Route path="/observations" element={<Observations addComment={addComment} getComments={getComments} comments={comments} setComments={setComments} />} />        
         </Routes> 
       </div>

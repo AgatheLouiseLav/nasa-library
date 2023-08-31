@@ -1,5 +1,5 @@
 import { useLocation, useNavigate } from 'react-router-dom';
-import React from 'react'
+import './SupernovaItem.css';
 
 export default function SupernovaItem() {
 	const location = useLocation();
@@ -8,11 +8,17 @@ export default function SupernovaItem() {
 		navigate("/supernovas")
 	}
 	console.log(location.state)
-  return (
-	<>
-	<div>SuperNova</div>
-	</>
-  )
-}
+		return (
+				<div className='SupernovaItem'>
+					<div className='SupernovaItem-Card'>
+						<h1>{location.state.data[0].title}</h1>
+						<img src={location.state.links[0].href} alt={location.state.data[0].title}/>
+						<h3>{location.state.data[0].date_created}</h3>
+						<h3>{location.state.data[0].nasa_id}</h3>
+						<p>{location.state.data[0].description}</p>
+					</div>
+				</div>
+		)
+	}
 
  

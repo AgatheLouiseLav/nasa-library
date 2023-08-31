@@ -1,0 +1,25 @@
+.SupernovaItem{
+	padding-top:90px;
+}
+
+.SupernovaItem-Card{
+	min-height: 300px;
+	text-align: center;
+	align-items: center;
+	padding:60px;
+}
+
+.SupernovaItem-Card h1,.SupernovaItem-Card p{
+	margin: 0 auto;
+	padding: 30px;
+	width:70%;
+}
+
+.SupernovaItem-Card h3{
+	padding: 10px;
+	color: #A459D1;
+}
+
+.SupernovaItem-Card img{
+	width:400px;
+}
