@@ -1,7 +1,8 @@
 import SupernovaCard from "../../components/SupernovaCard/SupernovaCard";
-import './Supernovas.css'
+import './Supernovas.css';
 
-export default function Supernovas({supernovasData}) {
+export default function Supernovas({ supernovasData }) {
+	
 	return (
 		<div className="Supernovas">
 			<h1>Supernovas library</h1>
@@ -11,5 +12,5 @@ export default function Supernovas({supernovasData}) {
 				))}
 			</div>
 		</div>
-	)
-}
+	);
+};

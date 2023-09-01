@@ -2,12 +2,14 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import './AsteroidItem.css';
 
 export default function AsteroidItem() {
+
 	const location = useLocation();
 	const navigate = useNavigate();
+
 	if(!location.state){
 		navigate("/asteroids")
-	}
-	console.log(location.state)
+	};
+	
   return (
 	<div className='AsteroidItem'>
 		<h1>{location.state.name}</h1>
@@ -53,6 +55,6 @@ export default function AsteroidItem() {
 			}
 		</div>
 	</div>
-  )
-}
+  );
+};
 

@@ -25,6 +25,7 @@
 }
 
 .AsteroidItem-table tr:nth-child(even){background-color: #111111;}
+
 .AsteroidItem-date p:nth-child(even){background-color: #111111;}
 
 .AsteroidItem-date {

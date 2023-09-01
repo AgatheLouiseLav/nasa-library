@@ -3,4 +3,4 @@ const BASE_URL = `https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photo
 
 export async function getMarsImages() {
   return sendRequestNasa(BASE_URL);
-}
+};

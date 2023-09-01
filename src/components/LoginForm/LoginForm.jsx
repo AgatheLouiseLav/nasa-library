@@ -1,18 +1,20 @@
 import { useState } from 'react';
 import * as usersService from '../../utilities/users-service';
-import './LoginForm.css'
+import './LoginForm.css';
 
 export default function LoginForm({ setUser }) {
+
   const [credentials, setCredentials] = useState({
     email: '',
     password: ''
   });
+
   const [error, setError] = useState('');
 
   function handleChange(evt) {
     setCredentials({ ...credentials, [evt.target.name]: evt.target.value });
     setError('');
-  }
+  };
 
   async function handleSubmit(evt) {
     evt.preventDefault();
@@ -23,7 +25,7 @@ export default function LoginForm({ setUser }) {
     } catch {
       setError('Log In Failed - Try Again');
     }
-  }
+  };
 
   return (
     <div className='LoginForm'> 
@@ -40,4 +42,4 @@ export default function LoginForm({ setUser }) {
       <p className="error-message">&nbsp;{error}</p>
     </div>
   );
-}
+};

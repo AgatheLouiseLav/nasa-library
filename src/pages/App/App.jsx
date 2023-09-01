@@ -17,6 +17,7 @@ import SupernovaItem from '../../components/SupernovaItem/SupernovaItem';
 import AsteroidItem from '../../components/AsteroidItem/AsteroidItem';
 
 export default function App() {
+
   const [user, setUser] = useState(getUser());
   const [asteroids, setAsteroids] = useState(null);
   const [marsImages, setMarsImages] = useState(null);
@@ -27,7 +28,7 @@ export default function App() {
   async function getComments() {
     const comments = await commentAPI.getAll();
     setComments(comments);
-  }
+  };
 
 	  useEffect(function() {
       if(user !== null){
@@ -37,7 +38,7 @@ export default function App() {
 
 	function addComment(comment) {
     	setComments([...comments, comment]);
-  	}
+  	};
   /*End Create comment */
 
   /* Get Asteroids */
@@ -47,7 +48,7 @@ export default function App() {
       setAsteroids(allAsteroids);
 		}
 		getAsteroids();
-	},[])
+	},[]);
   /* End Get Asteroids */
 
   /* Get Mars Img */
@@ -57,8 +58,7 @@ export default function App() {
       setMarsImages(allMarsImages);
 		}
 		getMarsImages();
-	},[])
-
+	},[]);
   /* End Get Mars Img */
 
   /* Get Mars Weather */
@@ -68,7 +68,7 @@ export default function App() {
       setSupernovasData(supernovaImg);
 		}
 		getSupernova();
-	},[]) 
+	},[]);
   /* End Get Mars Weather */
 
   return (
@@ -90,6 +90,6 @@ export default function App() {
         <AuthPage setUser={setUser}/> }
    </main>
   );
-}
+};
 
 

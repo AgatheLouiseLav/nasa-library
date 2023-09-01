@@ -1,7 +1,7 @@
-import MarsImage from "../../components/MarsImage/MarsImage"
-import './Mars.css'
+import MarsImage from "../../components/MarsImage/MarsImage";
+import './Mars.css';
 
-export default function Mars({marsImages}) {
+export default function Mars({ marsImages }) {
 	
 	return (
 		<div className="Mars">
@@ -12,5 +12,5 @@ export default function Mars({marsImages}) {
 				))}
 			</div>
 		</div>
-	)
-}
+	);
+};

@@ -1,7 +1,9 @@
 import { useState,useEffect } from 'react';
 import * as apodAPI from '../../utilities/apod-api';
-import './Hero.css'
+import './Hero.css';
+
 export default function Hero() {
+
 	const [apod, setApod]=useState([]);
 
 	useEffect(function(){
@@ -10,7 +12,7 @@ export default function Hero() {
       	setApod(apodImg);
 		}
 		getApod();
-	},[])
+	},[]);
 
 	return (
 		<div className="Hero">
@@ -22,5 +24,5 @@ export default function Hero() {
 				<p><span>{apod.date}</span></p>
 			</div>
 		</div>
-		)
-}
+	);
+};

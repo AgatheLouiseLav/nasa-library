@@ -2,12 +2,14 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import './SupernovaItem.css';
 
 export default function SupernovaItem() {
+
 	const location = useLocation();
 	const navigate = useNavigate();
+
 	if(!location.state){
 		navigate("/supernovas")
 	}
-	console.log(location.state)
+
 		return (
 				<div className='SupernovaItem'>
 					<div className='SupernovaItem-Card'>
@@ -18,7 +20,7 @@ export default function SupernovaItem() {
 						<p>{location.state.data[0].description}</p>
 					</div>
 				</div>
-		)
-	}
+		);
+	};
 
  

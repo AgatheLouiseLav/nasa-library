@@ -3,4 +3,4 @@ const BASE_URL = `https://api.nasa.gov/planetary/apod?api_key=${process.env.REAC
 
 export async function getApod() {
   return sendRequestNasa(BASE_URL);
-}
+};

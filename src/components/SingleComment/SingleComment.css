@@ -11,6 +11,7 @@
 	display: flex;
 	justify-content: space-between;
 }
+
 .SingleComment-text div{
 	display: flex;
 	flex-direction: column;

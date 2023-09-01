@@ -1,5 +1,5 @@
 import AsteroidCard from "../../components/AsteroidCard/AsteroidCard";
-import './Asteroids.css'
+import './Asteroids.css';
 
 export default function Asteroids({ asteroids }) {
 
@@ -14,5 +14,5 @@ export default function Asteroids({ asteroids }) {
 			<h1>Asteroids</h1>
 			{allAsteroids}
 		</main>
-	)
-}
+	);
+};

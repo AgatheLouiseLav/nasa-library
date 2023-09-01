@@ -1,8 +1,9 @@
 import * as commentAPI from '../../utilities/comment-api';
 import {useState} from "react";
-import './SingleComment.css'
+import './SingleComment.css';
 
 export default function SingleComment({comment, handleCommentUpdate, handleCommentDelete}) {
+
 	const [update, setUpdate] = useState(false);
   	const [updateComment, setUpdateComment] = useState({ text : comment.text});
 
@@ -57,5 +58,5 @@ export default function SingleComment({comment, handleCommentUpdate, handleComme
         </div>
       )}	
 		</div>
-	)
-}
+	);
+};

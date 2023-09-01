@@ -3,7 +3,7 @@ import './Observations.css';
 import * as commentAPI from '../../utilities/comment-api';
 import SingleComment from '../../components/SingleComment/SingleComment';
 
-export default function Observations({addComment, getComments, comments, setComments }) {
+export default function Observations({ addComment, getComments, comments, setComments }) {
 
 	const [newComment, setNewComment] = useState("");
 	
@@ -14,7 +14,7 @@ export default function Observations({addComment, getComments, comments, setComm
 		addComment(comment);
     	setNewComment("");
 		getComments();
-  	}
+  	};
 	/*End Add comment */
 
 	/* Update comment */
@@ -23,7 +23,6 @@ export default function Observations({addComment, getComments, comments, setComm
       		updatedComment._id === comment._id ? updatedComment : comment);
     	setComments(updatedComments); 
   		};
-		
 	/*End Update comment */
 
 	/*Delete Comment */
@@ -57,9 +56,9 @@ export default function Observations({addComment, getComments, comments, setComm
 						pattern=".{4,}"/>
 						<button type="submit"><i className="uil uil-plus"></i>Add Observation</button>
 				</form>
-			<div className="Observations-text">
-				{commentItems}
+				<div className="Observations-text">
+					{commentItems}
+				</div>
 			</div>
-	</div>
-	)
-}
+	);
+};
