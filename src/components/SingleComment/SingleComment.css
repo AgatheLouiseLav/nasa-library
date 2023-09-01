@@ -1,9 +1,54 @@
 .SingleComment{
-	border: 2px solid blue;
 	display: flex;
 	flex-direction: row;
+	padding: 10px;
+	margin: 10px;
+	background-color: black;
 }
 
 .SingleComment-text{
-	border: 2px solid pink;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+}
+.SingleComment-text div{
+	display: flex;
+	flex-direction: column;
+}
+
+.SingleComment-text div button{
+	margin:10px;
+	width:30px;
+	height:30px;
+	font-size: 18px;
+	background-color: transparent;
+	color: #A459D1;
+	border: none;
+	cursor: pointer;
+}
+
+.SingleComment-Edit{
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+.SingleComment-Edit textarea{
+	margin: 10px;
+	padding: 10px;
+	height: 80px;
+	border: 2px solid #A459D1;
+	background-color: black;
+	color: white;
+}
+
+.SingleComment-Edit button{
+	padding:10px;
+	margin: 10px;
+	background-color: #A459D1;
+	border: #A459D1;
+	color: white;
+	font-size: 18px;
+	font-weight: 500;
+	cursor: pointer;
 }

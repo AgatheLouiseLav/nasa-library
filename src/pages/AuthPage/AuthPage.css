@@ -1,0 +1,24 @@
+.AtuhPage{
+	width:600px;
+	margin:50px auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.AtuhPage button{
+	padding:10px;
+	width:400px;
+	margin: 20px 10px;
+	background-color: transparent;
+	border: #A459D1;
+	color: white;
+	font-size: 18px;
+	font-weight: 500;
+	cursor: pointer;
+}
+
+.Auth-btn:hover{
+	color: #A459D1;
+}

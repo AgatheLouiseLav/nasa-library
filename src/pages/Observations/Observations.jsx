@@ -47,15 +47,15 @@ export default function Observations({addComment, getComments, comments, setComm
 
 	return(
 			<div className="Observations">
-				<form onSubmit={handleAddComment}>
+				<form onSubmit={handleAddComment} className='Observations-Form'>
 					<h2>New Observation</h2><br/>
 					<textarea 
 						value={newComment}
 						onChange={(evt) => setNewComment(evt.target.value)}
-						placeholder="New Comment"
+						placeholder="New Observation"
 						required
 						pattern=".{4,}"/>
-						<button type="submit">Add Observation</button>
+						<button type="submit"><i className="uil uil-plus"></i>Add Observation</button>
 				</form>
 			<div className="Observations-text">
 				{commentItems}

@@ -43,8 +43,8 @@ export default function AsteroidItem() {
 				</tr>
 			</tbody>
 		</table>
-
-		<h3>Close Approach</h3>
+		&nbsp; &nbsp;
+		<h3>Close Approach to the Earth Data</h3>
 		<div className='AsteroidItem-date'>
 			{
 				location.state.close_approach_data.map((calendar) => {

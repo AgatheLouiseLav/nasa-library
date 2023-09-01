@@ -38,7 +38,7 @@ export default function SingleComment({comment, handleCommentUpdate, handleComme
 	return (
 		<div className="SingleComment">
 			  {update ? (
-        <form onSubmit={handleUpdateSubmit}>
+        <form onSubmit={handleUpdateSubmit} className='SingleComment-Edit'>
           <textarea
             value={updateComment.text}
             onChange={(e) => setUpdateComment({text: e.target.value})}
@@ -50,8 +50,10 @@ export default function SingleComment({comment, handleCommentUpdate, handleComme
       ) : (
         <div className='SingleComment-text'>
           <h3>{comment.text}</h3>
-          <button onClick={handleUpdateClick}><i className="uil uil-edit-alt"></i></button>
-          <button onClick={handleDeleteClick}><i className="uil uil-trash-alt"></i></button>
+		  <div>
+          	<button onClick={handleUpdateClick}><i className="uil uil-edit-alt"></i></button>
+          	<button onClick={handleDeleteClick}><i className="uil uil-trash-alt"></i></button>
+		  </div>
         </div>
       )}	
 		</div>

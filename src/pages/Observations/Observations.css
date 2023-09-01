@@ -6,18 +6,45 @@
 	height: 100%;
 }
 
-.Observations form{
-	border:red 2px solid;
+.Observations-Form{
 	justify-content: center;
 	background-color: #111111;
 	width: 50%;
 	height:400px;
 	margin: 20px;
+	padding: 40px;
 	display: flex;
+	justify-content: center;
+	text-align: center;
+	align-items: center;
 	flex-direction: column;
 }
 
+.Observations-Form textarea{
+	height: 150px;
+	padding: 10px;
+	width:500px;
+	border: 2px solid #A459D1;
+	background-color: black;
+	color: white;
+}
+
+.Observations-Form button{
+	margin: 30px;
+	padding: 10px;
+	width:500px;
+	height: 40px;
+	background-color: #A459D1;
+	border: #A459D1;
+	color: white;
+	font-size: 18px;
+	font-weight: 500;
+	cursor: pointer;
+}
+
 .Observations-text{
-	border:yellowgreen 2px solid;
+	background-color: #111111;
+	padding: 40px;
+	margin: 20px;
 	width: 50%;
 }
