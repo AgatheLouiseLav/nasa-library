@@ -37,7 +37,7 @@ Also the link to my [trello board](https://trello.com/c/Q5jvophe/21-erd).
 5. Express, 
 6. Node, 
 7. MongoDB , 
-8. Nasa APIs.
+8. NASA APIs.
 
 ## Challenges
 

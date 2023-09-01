@@ -12,7 +12,7 @@ export default function NavBar({ user, setUser }) {
 	return (
 	<nav className="Navbar">
 		<div className="welcome-navbar">
-			<h1>Welcome, to <span>Nasa's Library</span> {user.name} !</h1>
+			<h1>Welcome, to <span>NASA Library</span> {user.name} !</h1>
 			<Link to="" onClick={handleLogOut}><i className="uil uil-signout"></i></Link>
 		</div>
 		<div className='sub-navbar'>
