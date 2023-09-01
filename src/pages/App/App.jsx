@@ -25,12 +25,14 @@ export default function App() {
 
   /*Create comment */
   async function getComments() {
-      const comments = await commentAPI.getAll();
-      setComments(comments);
-  	}
+    const comments = await commentAPI.getAll();
+    setComments(comments);
+  }
 
 	  useEffect(function() {
-  	  getComments();
+      if(user !== null){
+        getComments();
+      } 
 	  },[user]);
 
 	function addComment(comment) {

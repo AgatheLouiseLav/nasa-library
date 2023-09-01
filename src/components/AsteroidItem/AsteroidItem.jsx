@@ -16,8 +16,8 @@ export default function AsteroidItem() {
 			<thead>
 				<tr>
 				<th>Unit</th>
-				<th>minimun</th>
-				<th>maximum</th>
+				<th>Minimun</th>
+				<th>Maximum</th>
 				</tr>
 			</thead>
 			<tbody>

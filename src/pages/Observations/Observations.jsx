@@ -46,18 +46,20 @@ export default function Observations({addComment, getComments, comments, setComm
 	/* End SingleComment Component */
 
 	return(
-		<div className="Observations">
-		<form onSubmit={handleAddComment}>
-			<h2>New Observation</h2><br/>
-			<input 
-				value={newComment}
-				onChange={(evt) => setNewComment(evt.target.value)}
-				placeholder="New Comment"
-				required
-				pattern=".{4,}"/>
-				<button type="submit">Add Comment</button>
-		</form>
-		{commentItems}
-		</div>
+			<div className="Observations">
+				<form onSubmit={handleAddComment}>
+					<h2>New Observation</h2><br/>
+					<textarea 
+						value={newComment}
+						onChange={(evt) => setNewComment(evt.target.value)}
+						placeholder="New Comment"
+						required
+						pattern=".{4,}"/>
+						<button type="submit">Add Observation</button>
+				</form>
+			<div className="Observations-text">
+				{commentItems}
+			</div>
+	</div>
 	)
 }

@@ -5,7 +5,7 @@
 
 .AsteroidItem h1, .AsteroidItem h3{
 	text-align: center;
-	padding:20px;
+	padding:30px;
 }
 
 .AsteroidItem-table{
@@ -31,11 +31,11 @@
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
+	max-width: 90%;
 }
 .AsteroidItem-date p{
 	padding:5px;
 	text-align: center;
 	font-size: 18px;
 	width:250px;
-
 }

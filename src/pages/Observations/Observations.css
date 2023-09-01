@@ -1,9 +1,23 @@
 .Observations {
-	padding: 150px 20px;
+	padding: 175px 20px;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	height: 100%;
 }
 
 .Observations form{
 	border:red 2px solid;
+	justify-content: center;
+	background-color: #111111;
+	width: 50%;
+	height:400px;
+	margin: 20px;
 	display: flex;
 	flex-direction: column;
+}
+
+.Observations-text{
+	border:yellowgreen 2px solid;
+	width: 50%;
 }
