@@ -15,8 +15,8 @@ export default function SupernovaItem() {
 					<div className='SupernovaItem-Card'>
 						<h1>{location.state.data[0].title}</h1>
 						<img src={location.state.links[0].href} alt={location.state.data[0].title}/>
-						<h3>{location.state.data[0].date_created}</h3>
-						<h3>{location.state.data[0].nasa_id}</h3>
+						<h3>Date : {(location.state.data[0].date_created)}</h3>
+						<h3>At : {location.state.data[0].nasa_id}</h3>
 						<p>{location.state.data[0].description}</p>
 					</div>
 				</div>
